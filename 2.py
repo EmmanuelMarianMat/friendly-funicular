@@ -9,8 +9,7 @@ def solution(n,k):
     def rec(x,l):
         if l==k:
             return len(multiples[x])
-        ret = sum(rec(num,l+1) for num in multiples[x])
-        return ret
+        return sum(rec(num,l+1) for num in multiples[x])
         
     return sum(rec(num,2) for num in range(1,n+1))
 
